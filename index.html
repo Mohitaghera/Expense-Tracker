@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <title>Expense Tracker App</title>
+    <link rel="icon" type="image/x-icon" href="fav.png" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="header__left">
+            <img class="header__logo" src="logo.png" alt="Expense Tracker logo"></img>
+            <h1 class="header__name">Expense Tracker App</h1>
+        </div>
+        <div class="header__right">
+            <button class="btn btn__add-category">Add Expense Category</button>
+        </div>
+      </header>
+      <main class="main">
+        <div class="main__header">
+            <div class="search">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon search__icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                  </svg>
+                  
+            <input type="text" class="search__expense" placeholder="Search Expense By Name or Category">
+        </div>
+            <button class="btn btn__add-expense">Add New Expense</button>
+        </div>
+        <table class="expense__table">
+            <thead>
+                <tr class="expense__table--header">
+                    <th class="data__header">Name</th>
+                    <th class="data__header">Amount</th>
+                    <th class="data__header">Date</th>
+                    <th class="data__header">Category</th>
+                    <th class="data__header">Edit</th>
+                    <th class="data__header">Delete</th>
+                </tr>
+            </thead>
+            <tbody class="expense__list">
+                <tr  class="no-expense ">
+                    <td>No Expense</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="total__expense">
+            <h3 class="total__expense--text">Total Expense :</h3>
+            <p class="total__expense--value" >0</p>
+        </div>
+      </main>
+      <div class="category__overlay ">
+      <div class="add__category ">
+        <form action="#" class="form__category--add">
+            <div class="category__field">
+            <label for="category" class="category-label">Enter New Category</label>
+            <input type="text" id="category" class="category-input" autocomplete="off">
+            <p class="error-new-category error__text hidden">Please Enter Category</p>
+        </div>
+        <button type="submit" class="btn btn__submit-category">Add Category</button>
+        </form>
+      </div>
+    </div>
+    <div class="expense__overlay">
+      <div class="add__expense">
+        <div class="add__expense--header">
+        <h2 class="expense__title">Enter your expense here</h2>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon close__icon expense__close--icon">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
+          
+    </div>
+        <form action="#" class="form__add--expense">
+            <div class="expense__field name__field">
+                <label for="name" class="expense-label name-label">Enter Expense Name</label>
+                <input type="text" id="name" class="expense-input name-input" autocomplete="off">
+                <p class="error__text error__text--name hidden">Please Enter Expense Name</p>
+            </div>
+            <div class="expense__field amount__field">
+                <label for="amount" class="expense-label amount-label">Amount</label>
+                <input type="number" id="amount" class="expense-input amount-input" autocomplete="off">
+                <p class="error__text error__text--amount hidden">Please Enter Expense Amount</p>
+            </div>
+            <div class="expense__field date__field">
+                <label for="date" class="expense-label date-label">Date</label>
+                <input type="date" id="date" class="expense-input date-input" autocomplete="off">
+                <p class="error__text error__text--date hidden">Please Enter valid Date</p>
+            </div>
+            <div class="expense__field category">
+                <label for="category" class="expense-label expense__category-label">Category</label>
+                <select id="category" class="expense-input category-select">
+                    <option value="default" class="category-option">Please select your category</option>
+                </select>
+                <p class="error__text error__text--category hidden">Please Select Your Category</p>
+            </div>
+            <button type="submit" class="btn btn__submit-expense">Add Expense</button>
+
+        </form>
+      </div>
+    </div>
+    </div>
+  </body>
+</html>
